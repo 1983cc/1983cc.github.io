@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="AF的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="在 Windows IoT Core 上部署 Express 项目遇到的一些问题偶然的机会知道了微软发布了 Windows 10 的物联网版本 Windows 10 IoT Core, 距今已经有两年了, 它的官方网站 (https://developer.microsoft.com/en-us/windows/iot)文档和示例清晰完整, 想起买的树莓派3因为懒于学习 Linux 系开发的知识一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows IoT Core 上部署 Express 项目的一些问题">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/Windows-IoT-Core-上部署-Express-项目的一些问题/index.html">
 <meta property="og:site_name" content="AF的博客">
+<meta property="og:description" content="在 Windows IoT Core 上部署 Express 项目遇到的一些问题偶然的机会知道了微软发布了 Windows 10 的物联网版本 Windows 10 IoT Core, 距今已经有两年了, 它的官方网站 (https://developer.microsoft.com/en-us/windows/iot)文档和示例清晰完整, 想起买的树莓派3因为懒于学习 Linux 系开发的知识一">
+<meta property="og:updated_time" content="2017-04-28T02:08:37.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AF的博客">
+<meta name="twitter:title" content="Windows IoT Core 上部署 Express 项目的一些问题">
+<meta name="twitter:description" content="在 Windows IoT Core 上部署 Express 项目遇到的一些问题偶然的机会知道了微软发布了 Windows 10 的物联网版本 Windows 10 IoT Core, 距今已经有两年了, 它的官方网站 (https://developer.microsoft.com/en-us/windows/iot)文档和示例清晰完整, 想起买的树莓派3因为懒于学习 Linux 系开发的知识一">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/27/Windows-IoT-Core-上部署-Express-项目的一些问题/"/>
 
 
 
 
 
-  <title> AF的博客 </title>
+  <title> Windows IoT Core 上部署 Express 项目的一些问题 | AF的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,9 +148,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -262,10 +264,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/27/Windows-IoT-Core-上部署-Express-项目的一些问题/" itemprop="url">
-                  Windows IoT Core 上部署 Express 项目的一些问题
-                </a>
+                Windows IoT Core 上部署 Express 项目的一些问题
               
             
           </h1>
@@ -316,9 +315,7 @@
       
 
       
-        
-          
-            <h1 id="在-Windows-IoT-Core-上部署-Express-项目遇到的一些问题"><a href="#在-Windows-IoT-Core-上部署-Express-项目遇到的一些问题" class="headerlink" title="在 Windows IoT Core 上部署 Express 项目遇到的一些问题"></a>在 Windows IoT Core 上部署 Express 项目遇到的一些问题</h1><p>偶然的机会知道了微软发布了 Windows 10 的物联网版本 Windows 10 IoT Core, 距今已经有两年了, 它的官方网站 (<code>https://developer.microsoft.com/en-us/windows/iot</code>)文档和示例清晰完整, 想起买的树莓派3因为懒于学习 Linux 系开发的知识一直在吃灰, 而一脉相承的 .NET 开发体系可以减少学习成本, 就把系统从 Debian 刷成了 Windows 10 IoT Core 。</p>
+        <h1 id="在-Windows-IoT-Core-上部署-Express-项目遇到的一些问题"><a href="#在-Windows-IoT-Core-上部署-Express-项目遇到的一些问题" class="headerlink" title="在 Windows IoT Core 上部署 Express 项目遇到的一些问题"></a>在 Windows IoT Core 上部署 Express 项目遇到的一些问题</h1><p>偶然的机会知道了微软发布了 Windows 10 的物联网版本 Windows 10 IoT Core, 距今已经有两年了, 它的官方网站 (<code>https://developer.microsoft.com/en-us/windows/iot</code>)文档和示例清晰完整, 想起买的树莓派3因为懒于学习 Linux 系开发的知识一直在吃灰, 而一脉相承的 .NET 开发体系可以减少学习成本, 就把系统从 Debian 刷成了 Windows 10 IoT Core 。</p>
 <p>从安装系统到开发部署第一个示例应用, 按照官方的 Get Started 部分一步步来就可以了, 此时的系统的版本是 14xxx, 如果想部署一个网站, 在一般的主机上只需要装一个 Web 服务器软件就可以了, 而 Windows 10 IoT 只支持 UWP 应用 (或由 Win32 转化的 UWP 应用), 开发语言可以是 C#, C++ 和 Python, 却没有对应的 UWP 服务器软件, 自然地想到不用专门的服务器软件的 Node.js, 而恰好官方示例中有这么一个 Express 的示例, 在 Visual Studio 用到一个叫 NTVS 的 Node.js 开发工具扩展来方便的调试和部署。</p>
 <p>而故事(或者事故)就发生在把系统更新到版本15603之后, 这个版本加入了对 Cortana 的支持, 方便开发所谓的智能助理。</p>
 <h2 id="用-VS2015-和-NTVS-部署失败"><a href="#用-VS2015-和-NTVS-部署失败" class="headerlink" title="用 VS2015 和 NTVS 部署失败"></a>用 VS2015 和 NTVS 部署失败</h2><p>通过 NTVS 提供的 Basic Node.js Express 4 Application (Universal Windows) 模板新建一个 Express Web 项目, 把属性的调试机地址改成 Raspberry Pi 的地址, 启动调试, 在输出窗口中会报出错误:</p>
@@ -335,16 +332,20 @@
 <p>至此放弃, 但收获是通过这些调查研究对问题的原因形成了大概的轮廓。于是就考虑如果要部署这类项目, 还是用更为通用成熟的 Linux 系统, 这个问题的解决还是等 NTVS 更新吧。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Windows 10 IoT Core 的目标用户还是设备制造商, 应用开发的平台主要还是 UWP, 所以 NTVS 的更新也不及时, 对于解决这种问题, 就需要拿出专业的精神，足够的时间, 读 NTVS 源码, 读 node.js for chakra 源码, 了解 Windows 10 IoT Core 的方方面面， 一句话, 这可能不是非专业初学者能玩的, 但在查找问题时却可以提升开发者分析解决问题的能力, 还能学到更多的东西。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -353,285 +354,34 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/PersonalImageServerWithLychee/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Cao Bo">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="https://ss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/fb6e3139383363636f02">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="AF的博客">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="AF的博客" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/13/PersonalImageServerWithLychee/" rel="next" title="用lychee搭建个人图片管理服务器">
+                <i class="fa fa-chevron-left"></i> 用lychee搭建个人图片管理服务器
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/02/13/PersonalImageServerWithLychee/" itemprop="url">
-                  用lychee搭建个人图片管理服务器
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T09:30:00+08:00">
-                2017-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="用lychee搭建个人图片管理服务器"><a href="#用lychee搭建个人图片管理服务器" class="headerlink" title="用lychee搭建个人图片管理服务器"></a>用lychee搭建个人图片管理服务器</h1><blockquote>
-<p><strong>修改记录</strong></p>
-<ul>
-<li>版本:1;修改时间:2017/2/17</li>
-</ul>
-</blockquote>
-<p>平时给孩子拍照片有很多，每个家庭成员手机上的照片因为存储空间不足需要定期清理并汇总到我这里。每次把照片备份到一个文件夹中，文件夹命名格式是 userName-deviceType-backupDate。现在需要从这些文件中选一些照片，想让每个人都能在自己的设备上选择符合的照片。</p>
-<p>通过搭建一个Web服务器，让每个人都可以在自己的设备上管理是比较方便的。在GitHub上，LyChee作为一个照片管理系统获得了大量关注，是这次实现个人照片管理的首选。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>lychee 是用 php 写的，安装说明中要求 php 版本高于 5.5，目前开发机上安装的是 php 7，Apache 是 2.4，lychee 需要 MySql 数据库，当然还要从 github 上把 lychee 源码拉下来。</p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>把 lychee 从 GitHub 上拉下来后，按照项目中的安装说明，对它的 src 目录先 build 。启动 Apache 服务，并注意要启动 MySql 服务。</p>
-<p>配置 Apache 。在这里只简单的在配置文件中加一个 Virtual Host 用于托管站点，如果需要更详细的配置请深入研究 Apache 服务器的配置管理。Virtual Host 中配置了 lychee 的 IP 、端口号和部署的物理地址，如何配置开发人员都知道。</p>
-<p>配置 php 。 按照 lychee 的安装说明安装 lychee 需要的 php 组件，其实就是把 php.ini 文件中注释的一些 extension 解注，如果不安装启用会在使用中报各种诡异的错误。</p>
-<p>打开浏览器访问 lychee 的地址，它会给出一个安装配置界面，只需要给出 MySql 数据库的用户名和密码就可以了，其它完全可以用默认的，之后系统会要一个 lychee 系统管理员的用户名和密码。搭建完成。</p>
-<h2 id="使用中存在的问题"><a href="#使用中存在的问题" class="headerlink" title="使用中存在的问题"></a>使用中存在的问题</h2><p>使用中发现存在以下几方面的问题：</p>
-<ol>
-<li><p>从 Server 照片导入存在问题。系统提供了三种导入照片的方式，而在试用从 Server 导入时，如果提供了一个 USB 外接设备的路径无法导入，使用本地磁盘的路径，在导入过程中系统显示一直在 Improting，查看它的上传目录生成了一部分 thumbnail 图，还有一些大图，并且 thumbnail 图和大图的数量也不一致。建议还是用 upload 方式批量选择文件夹中的图像进行上传。</p>
-</li>
-<li><p>从 Star 和 Recent 等固定默认目录中 download 报错。从 GitHub 上的 Issues 中也没有找到答案，还好自建的相册目录没有下载问题。报错信息如下图</p>
-<p> <img src="/2017/02/13/PersonalImageServerWithLychee/../images/lycheedownloaderror.PNG" alt=""></p>
-</li>
-<li><p>从苹果设备访问站点存在问题，安卓设备没有问题。但用开发机做服务器存在访问速度慢的问题，而 CPU 和内存的使用率并不高，还需要研究是不是家庭局域网的原因。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/31/树莓派的安装和使用/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Cao Bo">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="https://ss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/fb6e3139383363636f02">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="AF的博客">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="AF的博客" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/31/树莓派的安装和使用/" itemprop="url">
-                  树莓派的安装和使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-31T14:30:00+08:00">
-                2016-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="树莓派的安装和使用"><a href="#树莓派的安装和使用" class="headerlink" title="树莓派的安装和使用"></a>树莓派的安装和使用</h1><p>在淘宝上购得 树莓派 Raspberry Pi 3 Modal B 1个，HDMI 转 VGA线 1个，外壳，散热片，以及预装好 Debian 的 64G CF卡，另在京东购直连网线；电源直接用 Android 手机电源就行，试用没发现电压不稳的情况。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>树莓派 的接口很明显，HDMI转接线连好显示器，插入 CF卡， 可以在最后连电源，系统会自动启动</p>
-<h2 id="用-Windows-远程桌面连接树莓派"><a href="#用-Windows-远程桌面连接树莓派" class="headerlink" title="用 Windows 远程桌面连接树莓派"></a>用 Windows 远程桌面连接树莓派</h2><p>首先要做好网络连接。用直连线把 PC 和 树莓派 连接起来；把键盘接入树莓派，输入 wifi 密码连好无线网；在 PC 上把无线网络的共享设置为 以太网；查找 树莓派 的IP地址，可以在 debian 上用 ifconfig 命令，或者在 PC 上用 arp -a 命令查看（我实际没在这成功看到），这里是 192.168.1.110 。</p>
-<p>下载 putty, 输入上面地址用 ssh 连接， 用户名和密码是 pi@raspberry；进入后安装 树莓派 的远程桌面组件，命令是</p>
-<pre><code>sudo apt-get install tightvncserver
-</code></pre><p>用 windows 远程桌面 连接， 输入上面地址，用户名和密码和上面相同</p>
-<p>这样就可以远程操作 树莓派 了，免去了 接入 鼠标、键盘和显示器</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -639,6 +389,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -658,8 +412,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://ss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/fb6e3139383363636f02"
@@ -701,6 +464,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Windows-IoT-Core-上部署-Express-项目遇到的一些问题"><span class="nav-number">1.</span> <span class="nav-text">在 Windows IoT Core 上部署 Express 项目遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用-VS2015-和-NTVS-部署失败"><span class="nav-number">1.1.</span> <span class="nav-text">用 VS2015 和 NTVS 部署失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接部署"><span class="nav-number">1.2.</span> <span class="nav-text">直接部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -799,6 +578,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
