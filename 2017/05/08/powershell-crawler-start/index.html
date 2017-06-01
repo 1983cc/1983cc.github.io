@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="PowerShell 爬虫">
+<meta name="description" content="初步接触 PowerShell 爬虫爬虫技术也算是一项古老的技术了, 搜索引擎用, 大数据、机器学习、人工智能也用，它是数据采集的一个来源(或主要来源), 目前网上讨论比较多的是用 Python， Node.js 来实现, 原因可能是 Python 常用在数据挖掘和数据分析, 用它做实现爬虫可以在技术上无缝对接, 而 Node.js 天然强大的网络特性和异步处理让网络爬虫更容易实现, 以上纯属个人">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PowerShell 爬虫">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/powershell-crawler/index.html">
+<meta property="og:title" content="初步接触PowerShell 爬虫">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/powershell-crawler-start/index.html">
 <meta property="og:site_name" content="AF的博客">
-<meta property="og:description" content="PowerShell 爬虫">
-<meta property="og:updated_time" content="2017-05-08T07:45:46.342Z">
+<meta property="og:description" content="初步接触 PowerShell 爬虫爬虫技术也算是一项古老的技术了, 搜索引擎用, 大数据、机器学习、人工智能也用，它是数据采集的一个来源(或主要来源), 目前网上讨论比较多的是用 Python， Node.js 来实现, 原因可能是 Python 常用在数据挖掘和数据分析, 用它做实现爬虫可以在技术上无缝对接, 而 Node.js 天然强大的网络特性和异步处理让网络爬虫更容易实现, 以上纯属个人">
+<meta property="og:updated_time" content="2017-05-09T06:18:38.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerShell 爬虫">
-<meta name="twitter:description" content="PowerShell 爬虫">
+<meta name="twitter:title" content="初步接触PowerShell 爬虫">
+<meta name="twitter:description" content="初步接触 PowerShell 爬虫爬虫技术也算是一项古老的技术了, 搜索引擎用, 大数据、机器学习、人工智能也用，它是数据采集的一个来源(或主要来源), 目前网上讨论比较多的是用 Python， Node.js 来实现, 原因可能是 Python 常用在数据挖掘和数据分析, 用它做实现爬虫可以在技术上无缝对接, 而 Node.js 天然强大的网络特性和异步处理让网络爬虫更容易实现, 以上纯属个人">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/powershell-crawler/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/08/powershell-crawler-start/"/>
 
 
 
 
 
-  <title> PowerShell 爬虫 | AF的博客 </title>
+  <title> 初步接触PowerShell 爬虫 | AF的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +240,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/powershell-crawler/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/powershell-crawler-start/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Cao Bo">
@@ -264,7 +264,7 @@
             
             
               
-                PowerShell 爬虫
+                初步接触PowerShell 爬虫
               
             
           </h1>
@@ -315,7 +315,17 @@
       
 
       
-        <h1 id="PowerShell-爬虫"><a href="#PowerShell-爬虫" class="headerlink" title="PowerShell 爬虫"></a>PowerShell 爬虫</h1>
+        <h1 id="初步接触-PowerShell-爬虫"><a href="#初步接触-PowerShell-爬虫" class="headerlink" title="初步接触 PowerShell 爬虫"></a>初步接触 PowerShell 爬虫</h1><p>爬虫技术也算是一项古老的技术了, 搜索引擎用, 大数据、机器学习、人工智能也用，它是数据采集的一个来源(或主要来源), 目前网上讨论比较多的是用 Python， Node.js 来实现, 原因可能是 Python 常用在数据挖掘和数据分析, 用它做实现爬虫可以在技术上无缝对接, 而 Node.js 天然强大的网络特性和异步处理让网络爬虫更容易实现, 以上纯属个人猜测, 没有确切的论证来源 。</p>
+<p>而在 .NET 在开源世界中的爬虫实现数量相对不多, 当然主要原因不是 .NET 在实现爬虫时技术上有什么短板, 而是这种语言环境的特质决定的, GitHub 上也有一些开源的优秀爬虫框架,推荐 zlzforever/DotnetSpider, 作者还有个 QQ 群, 有兴趣可以关注一下 。</p>
+<p>作为 .NET 世界的成员之一, PowerShell 是以管理脚本语言的面貌出现的, 它是图灵完备的, 理论上可以做编程语言可以做的任何事, 只不过它在某些方面特别方便灵活, 而在其他方面又特别笨重 (要不然代替 C# 好了), 即它只能方便的应用在某些场景上, 用它探索爬虫的原因只是它是一种脚本语言, 而 Python, Node.js 也是, 因此推测脚本语言可以做的它都可以做, 顺便提一下, 本人既不是 PowerShell 专家, 也是爬虫的初学者, 但等二者都精熟了再写点东西也不是开发者的风格, 因此以下内容只是一些归纳总结后的探索和学习过程, 主要是记录在这方面的学习过程, 但尽量做到条理清晰、步步深入 。</p>
+<h2 id="一个简单的应用场景"><a href="#一个简单的应用场景" class="headerlink" title="一个简单的应用场景"></a>一个简单的应用场景</h2><p>真正的爬虫涉及到复杂的场景和需求, 从上面提到的 DotnetSpider 代码量就有所体现, 初学者本着由浅入深、由简到难的原则, 从简单的应用场景入手, 逐步完善， 从”单细胞生物”进化成”成虫” 。</p>
+<p>以这样一个”单细胞生物”为例, 很多人都喜欢看美剧, 但美剧是定期更新的, 所以你每天(或隔一段时间)去某网站上去看是否有更新, 要做的是打开浏览器, 输入网址, 在首页或某内容详细页中查看某剧是否更新， 如果有更新再点进去下载 …, 但日复一日的重复操作你不烦么, 并且有时你追不止一部剧, 作为立志用代码改变世界的开发者这是不能忍受的, 所以我们要写个程序, 它应该有如下功能, 让你追剧只需要轻轻一点(或执行一条命令)</p>
+<ul>
+<li>根据你设定的剧名在站上获取该剧的详细信息, 包括剧集序号、更新日期、下载链接等, 如果有多部剧要汇总成表, 可以排序, 可以启动下载工具下载…， 对获得的数据想你所想</li>
+</ul>
+<h2 id="获得剧集信息"><a href="#获得剧集信息" class="headerlink" title="获得剧集信息"></a>获得剧集信息</h2><p>对数据处理的第一步是要有可处理的数据, 我们的数据是从网页上获得的, 如果用 .NET 或其他语言处理需要一系列程序指令步骤, 而 PowerShell 只需要一条命令 Invoke-WebRequest， 以影视剧网站 <code>http://dytt8.net</code> 为例, 用以下 PowerShell 命令获得主页内容:</p>
+<pre><code>PS &gt; $
+</code></pre>
       
     </div>
 
@@ -458,7 +468,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerShell-爬虫"><span class="nav-number">1.</span> <span class="nav-text">PowerShell 爬虫</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初步接触-PowerShell-爬虫"><span class="nav-number">1.</span> <span class="nav-text">初步接触 PowerShell 爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个简单的应用场景"><span class="nav-number">1.1.</span> <span class="nav-text">一个简单的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得剧集信息"><span class="nav-number">1.2.</span> <span class="nav-text">获得剧集信息</span></a></li></ol></li></ol></div>
             
 
           </div>
