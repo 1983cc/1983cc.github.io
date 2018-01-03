@@ -87,14 +87,14 @@
 <meta name="description" content="现在有某站点，它的资源主要是 mp3 音频，站点不提供直接批量下载，只能按目录逐级点击，进入某专辑的文件列表，点某文件条目后进入，点击下载按钮转到下载处理页，成功后会接到响应的资源链接，chrome 会打开新标签页播放。
 但某专辑动辄有上百个的文件条目，逐一的点专辑列表下载非常繁琐，所以考虑用工具。用工具自动化批量获取文件的方法，大致可归为爬虫技术，涉及到对 web 网页内容的抓取和解析，最终目的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用PowerShell批量下载某站点的文件">
+<meta property="og:title" content="用PowerShell批量下载某站点的资源文件">
 <meta property="og:url" content="http://yoursite.com/2017/12/26/用PowerShell批量下载某站点的文件/index.html">
 <meta property="og:site_name" content="AF的博客">
 <meta property="og:description" content="现在有某站点，它的资源主要是 mp3 音频，站点不提供直接批量下载，只能按目录逐级点击，进入某专辑的文件列表，点某文件条目后进入，点击下载按钮转到下载处理页，成功后会接到响应的资源链接，chrome 会打开新标签页播放。
 但某专辑动辄有上百个的文件条目，逐一的点专辑列表下载非常繁琐，所以考虑用工具。用工具自动化批量获取文件的方法，大致可归为爬虫技术，涉及到对 web 网页内容的抓取和解析，最终目的">
-<meta property="og:updated_time" content="2018-01-02T09:03:15.320Z">
+<meta property="og:updated_time" content="2018-01-03T00:34:01.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用PowerShell批量下载某站点的文件">
+<meta name="twitter:title" content="用PowerShell批量下载某站点的资源文件">
 <meta name="twitter:description" content="现在有某站点，它的资源主要是 mp3 音频，站点不提供直接批量下载，只能按目录逐级点击，进入某专辑的文件列表，点某文件条目后进入，点击下载按钮转到下载处理页，成功后会接到响应的资源链接，chrome 会打开新标签页播放。
 但某专辑动辄有上百个的文件条目，逐一的点专辑列表下载非常繁琐，所以考虑用工具。用工具自动化批量获取文件的方法，大致可归为爬虫技术，涉及到对 web 网页内容的抓取和解析，最终目的">
 
@@ -130,7 +130,7 @@
 
 
 
-  <title> 用PowerShell批量下载某站点的文件 | AF的博客 </title>
+  <title> 用PowerShell批量下载某站点的资源文件 | AF的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +267,7 @@
             
             
               
-                用PowerShell批量下载某站点的文件
+                用PowerShell批量下载某站点的资源文件
               
             
           </h1>
@@ -416,7 +416,7 @@ function GetAddressList($url)
 
     return
 }
-</code></pre><p>至此我们获得了某专辑全部下载地址，但严格来说还只是下载页面地址，所以任务还没完成，因为网站要求用户点击“下载”按钮，chrome 会自动播放返回的真正的MP3文件，这就引发了下面两个问题：</p>
+</code></pre><p>至此我们获得了某专辑全部下载地址，但严格来说还只是下载页面地址，所以任务还没完成，因为网站要求用户点击“下载”按钮，chrome 会自动播放返回的真正的MP3文件，这.就引发了下面两个问题：</p>
 <ol>
 <li><p>执行 js 获得链接解析地址。在上面获取的地址还需要解析下载按钮的动作来获得， js 动作代码如下：</p>
 <p> function downfile() {</p>
@@ -426,11 +426,11 @@ downurl = downurl.substr(2,downurl.length-7);
 </code></pre><p> }</p>
 <p> 解析出的地址 downurl 形如 “/bzmtv_Inc/download.asp?fid=236632”，使用动态页面提供真正的资源地址，这里问题是如何在 PS 中执行 js 代码。</p>
 </li>
-<li><p>如何下载资源。上面动态页面直接用 Invoke-WebRequest 访问，返回的响应没有任何有用的内容，怀疑是网站使用了反爬虫策略。</p>
+<li><p>如何下载到资源。上面动态页面直接用 Invoke-WebRequest 访问，返回的响应没有任何有用的内容，怀疑是网站使用了反爬虫策略。</p>
 </li>
 </ol>
 <p>第1个问题可以用第三方类库解决(如 jint)，但第2个问题，网站用了哪种反爬虫策略，事实是 PS 不是专门用来做爬虫的，并且没有专门的模块来处理这方面问题，如果一定要用 PS 也不是不可以，会耗费大量的时间精力，但问题是技术本身就是工具，目的是让使用者更方便，所以这么做是得不偿失的，解决问题的方法是另辟蹊径。</p>
-<p>解决上述问题的方法放到另一篇去讲，顺便聊一聊爬虫。</p>
+<p>解决上述第2个问题的方法放到另一篇去讲，顺便聊一聊爬虫。</p>
 
       
     </div>
