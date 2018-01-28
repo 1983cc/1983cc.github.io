@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="AF的博客">
 <meta property="og:description" content="现在有某站点，它的资源主要是 mp3 音频，站点不提供直接批量下载，只能按目录逐级点击，进入某专辑的文件列表，点某文件条目后进入，点击下载按钮转到下载处理页，成功后会接到响应的资源链接，chrome 会打开新标签页播放。
 但某专辑动辄有上百个的文件条目，逐一的点专辑列表下载非常繁琐，所以考虑用工具。用工具自动化批量获取文件的方法，大致可归为爬虫技术，涉及到对 web 网页内容的抓取和解析，最终目的">
-<meta property="og:updated_time" content="2018-01-03T00:34:01.655Z">
+<meta property="og:updated_time" content="2018-01-28T05:57:57.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用PowerShell批量下载某站点的资源文件">
 <meta name="twitter:description" content="现在有某站点，它的资源主要是 mp3 音频，站点不提供直接批量下载，只能按目录逐级点击，进入某专辑的文件列表，点某文件条目后进入，点击下载按钮转到下载处理页，成功后会接到响应的资源链接，chrome 会打开新标签页播放。
@@ -367,7 +367,7 @@ System.IO.MemoryStream RawContentStream {get;}
 Microsoft.PowerShell.Commands.WebCmdletElementCollection Scripts {get;}
 int StatusCode {get;}
 string StatusDescription {get;}
-</code></pre><p>Invoke-WebRequest 命令向 web 页或 web 服务发送 HTTP,HTTPS,FTP 和 FILE 请求，解析响应并返回表单、链接、图像和其他 HTML 元素，返回类型为 HtmlWebResponseObject ，具体用法示例可参考官网文档。</p>
+</code></pre><p>Invoke-WebRequest 命令向 web 页或 web 服务发送 HTTP,HTTPS,FTP 和 FILE 请求，解析响应并返回表单、链接、图像和其他 HTML 元素，返回类型为 HtmlWebResponseObject ，具体用法示例可参考官网文档，需要指出的是，该命令可用于一般HTTP请求场景，如保存认证信息的 WebSession 参数，对于大多数互联网应用是够用的，但也存在应付不了的场景，详情见下一篇关于 puppeteer 的介绍。</p>
 <h2 id="批量获取下载地址"><a href="#批量获取下载地址" class="headerlink" title="批量获取下载地址"></a>批量获取下载地址</h2><p>基于以上对于 Invoke-WebRequest 指令的认识，我们可以写批量获取下载地址的代码了。该资源网站的资源路径格式为 “作者名/专辑名/专辑列表/资源文件”，本文关注说明如何抓取资源地址，所以只从”专辑列表”页面开始抓取。</p>
 <p>某资源专辑列表页的地址如下：</p>
 <pre><code>$downloadListUrl = &quot;http://www.pingshu8.com/MusicList/mmc_7_4906_1.htm&quot;
@@ -467,6 +467,10 @@ downurl = downurl.substr(2,downurl.length-7);
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/28/用puppeteer下载某站点的文件/" rel="prev" title="用 puppeteer 批量下载某站点的资源文件">
+                用 puppeteer 批量下载某站点的资源文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -535,7 +539,7 @@ downurl = downurl.substr(2,downurl.length-7);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

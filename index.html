@@ -238,6 +238,125 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/用puppeteer下载某站点的文件/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cao Bo">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://ss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/fb6e3139383363636f02">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AF的博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AF的博客" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/28/用puppeteer下载某站点的文件/" itemprop="url">
+                  用 puppeteer 批量下载某站点的资源文件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T11:56:00+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在上一篇《用 PowerShell 批量下载某站点的资源文件》中，我们发现了使用 PowerShell 的 Invoke-WebRequest 命令</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/26/用PowerShell批量下载某站点的文件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -367,7 +486,7 @@ System.IO.MemoryStream RawContentStream {get;}
 Microsoft.PowerShell.Commands.WebCmdletElementCollection Scripts {get;}
 int StatusCode {get;}
 string StatusDescription {get;}
-</code></pre><p>Invoke-WebRequest 命令向 web 页或 web 服务发送 HTTP,HTTPS,FTP 和 FILE 请求，解析响应并返回表单、链接、图像和其他 HTML 元素，返回类型为 HtmlWebResponseObject ，具体用法示例可参考官网文档。</p>
+</code></pre><p>Invoke-WebRequest 命令向 web 页或 web 服务发送 HTTP,HTTPS,FTP 和 FILE 请求，解析响应并返回表单、链接、图像和其他 HTML 元素，返回类型为 HtmlWebResponseObject ，具体用法示例可参考官网文档，需要指出的是，该命令可用于一般HTTP请求场景，如保存认证信息的 WebSession 参数，对于大多数互联网应用是够用的，但也存在应付不了的场景，详情见下一篇关于 puppeteer 的介绍。</p>
 <h2 id="批量获取下载地址"><a href="#批量获取下载地址" class="headerlink" title="批量获取下载地址"></a>批量获取下载地址</h2><p>基于以上对于 Invoke-WebRequest 指令的认识，我们可以写批量获取下载地址的代码了。该资源网站的资源路径格式为 “作者名/专辑名/专辑列表/资源文件”，本文关注说明如何抓取资源地址，所以只从”专辑列表”页面开始抓取。</p>
 <p>某资源专辑列表页的地址如下：</p>
 <pre><code>$downloadListUrl = &quot;http://www.pingshu8.com/MusicList/mmc_7_4906_1.htm&quot;
@@ -903,7 +1022,7 @@ downurl = downurl.substr(2,downurl.length-7);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
